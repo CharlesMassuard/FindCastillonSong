@@ -4,6 +4,7 @@ let playButton = document.getElementById('suivant');
 let body = document.querySelector('body');
 let score = document.getElementById('score');
 let titreReponse = document.getElementById('titreReponse');
+let temps = document.getElementById('temps');
 
 let buttonPause = document.getElementById('pause');
 
@@ -15,6 +16,8 @@ let musiqueEnCours = new Audio();
 let valeurScore = 0;
 let pause = false;
 let enAttente = false;
+let tpsEcoule = 0;
+let valider = false;
 
 function jouerMusique() {
     if(nbrMusiquesEcoutees === ListMusiques.length){
@@ -34,13 +37,31 @@ function jouerMusique() {
     indexMusiqueEnCours = nbrAleatoire;
     musiqueEnCours.pause();
     nbrMusiquesEcoutees++;
+    tpsEcoule = 0;
+    temps.innerHTML = "8s";
     musiqueEnCours = new Audio(`./musiques/${ListMusiques[nbrAleatoire]}.mp3`);
     musiqueEnCours.volume = 0.1;
     musiqueEnCours.play();
+    timer = setInterval(() => {
+        if(pause){
+            return;
+        }
+        tpsEcoule++;
+        temps.style.color = "white";
+        temps.innerHTML = `${8-tpsEcoule}s`;
+        if(temps.innerHTML === "3s"){
+            temps.style.color = "red";
+        }
+        console.log(tpsEcoule);
+        if(tpsEcoule === 8){
+            validateButton.click();
+            clearInterval(timer);
+        }
+    }, 1000);
 }
 
 reponse.addEventListener('keyup', (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && !valider) {
         validateButton.click();
     }
 });
@@ -50,7 +71,11 @@ validateButton.addEventListener('click', () => {
         jouerMusique();
         validateButton.innerHTML = "Valider";
         buttonPause.style.display = "block";
+        reponse.hidden = false;
+        reponse.focus();
     } else {
+        valider = true;
+        temps.style.color = "white";
         reponse.style.transition = "background 0s, border 0s";
         reponse.style.backgroundColor = "#1a1a1a";
         reponseValue = document.getElementById('reponse').value;
@@ -62,6 +87,7 @@ validateButton.addEventListener('click', () => {
             reponse.style.color = "darkred";
             body.style.backgroundColor = "red";
         }
+        clearInterval(timer);
         titreReponse.innerHTML = ListMusiques[indexMusiqueEnCours];
         score.innerHTML = "Score : "+valeurScore+"/"+nbrMusiquesEcoutees;
         setTimeout(() => {
@@ -89,6 +115,7 @@ buttonPause.addEventListener('click', () => {
         musiqueEnCours.play();
         buttonPause.innerHTML = "Pause";
         pause = false;
+        reponse.focus();
         if(enAttente){
             titreReponse.innerHTML = "";
             enAttente = false;

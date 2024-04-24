@@ -10,6 +10,24 @@ body{
     height: 100vh;
 }
 
+.material-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em !important;
+    margin: 0.1em;
+    margin-top: 0.6em;
+}
+
+.material-icons:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
 #reponse{
     border-radius: 1em;
     background: rgba(255, 255, 255, 0.1);
@@ -54,4 +72,29 @@ button:hover{
 #pause{
     display: none;
     margin-top: 0.5em;
+}
+
+#timer {
+    position: relative; /* Add this */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#temps {
+    position: absolute; /* Add this */
+    font-size: 2em;
+    margin-top: 1em;
+    font-weight: bold;
+    margin-left: 10em;
+}
+
+
+#titre {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    font-weight: bold;
 }

@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Home</title>
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="app.css">
-</head>
+    <head>
+        <title>Find Castillon's Song</title>
+        <script src="./js/index.js" defer></script>
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="icon" href="./img/icon.jpg" type="image/x-icon">
+    </head>
     <body>
-        <div id="musique"></div>
-        <div class="input-button-container">
-            <h1 id="titreReponse"></h1>
-            <input type="text" id="reponse" placeholder="Votre réponse">
-            <button id="valider">Lancer la partie</button>
-            <button id="pause">Pause</button>
-            <p id="score"></p>
+        <div id="accueil">
+            <h1><span class="black">Find</span> Castillon's <span class="black">Song</span></h1>
+            <button id="jouer">Jouer</button>
+        </div>
+        <div id="selectGame">
+            <article id="normalMode">
+                <figure><img src="./img/adele_vert.png" alt=""></figure>
+                <h2>Mode normal</h2>
+                <p>Trouve le nom de 27 sons, démarrants au début !</p>
+            </article>
+            <article id="contreLaMontreMode">
+                <figure><img src="./img/adele_castillon_rouge.png" alt=""></figure>
+                <h2>Mode contre la montre</h2>
+                <p>Trouve le nom de 27 sons, démarrants au début, en moins de 8 secondes !</p>
+            </article>
+            <article id="aleatoireMode">
+                <figure><img src="./img/adele_noir.png" alt=""></figure>
+                <h2>Mode aléatoire</h2>
+                <p>Trouve le nom de 27 sons, démarrants à un moment aléatoire de la chanson !</p>
+            </article>
+        </div>
+        <div id="selectFinalGame">
+            <article id="extremeMode">
+                <figure><img src="./img/adele_xtreme.png" alt=""></figure>
+                <h2>Mode Extreme</h2>
+                <p>Trouve le nom de 27 sons, démarrants à un moment aléatoire de la chanson <br> en moins de 8 secondes!</p>
+            </article>
         </div>
     </body>
 </html>
