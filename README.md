@@ -16,23 +16,23 @@ Une nouvelle musique est lancée 2 secondes après la fin de la manche.
 Il y a 27 manches.
 
 > *Tips : vous pouvez appuyer sur la touche "Entrée" pour valider votre réponse*
-<br>
+
 > *Tîps : les majuscules et accents ne sont pas contraignants (pour vérifier la réponse, tous les accents et majuscules du nom du morceau ainsi que de votre réponse sont retirés)*
 
 ## III. Modes de jeu
 
-Plusieurs modes de jeux sont proposés :  <br>
-    - Mode normal : la musique démarre, vous devez rentrer le nom correspondant
-    - Mode contre la montre : vous avez 8 secondes pour trouver le nom de la musique    
-    - Mode aléatorie : la musique démarre à un moment aléatoire, vous avez un temps illimité pour répondre
-    - Mode extrême : la musique démarre à un moment aléatoire, vous avez 8 seoncdes pour répondre
+Plusieurs modes de jeux sont proposés :  <br><br>
+    - Mode normal : la musique démarre, vous devez rentrer le nom correspondant <br>
+    - Mode contre la montre : vous avez 8 secondes pour trouver le nom de la musique <br>
+    - Mode aléatorie : la musique démarre à un moment aléatoire, vous avez un temps illimité pour répondre <br>
+    - Mode extrême : la musique démarre à un moment aléatoire, vous avez 8 seoncdes pour répondre 
 
 ## IV. Utilisation du site
 
 En raison des droits d'auteurs sur les musiques, l'hébergement n'est pas possible.
 
-Afin d'utiliser le site, une utilisation en locale doit être faite. <br>
-    - **Fork** le répertoire GitHub
-    - **Cloner** le nouveau répertoire obtenu grâce au *Fork*
-    - **Lancer** le site grâce à un double-clic dans le répertoire suivant : *./html/index.html* 
+Afin d'utiliser le site, une utilisation en locale doit être faite. <br><br>
+    - **Fork** le répertoire GitHub <br>
+    - **Cloner** le nouveau répertoire obtenu grâce au *Fork* <br>
+    - **Lancer** le site grâce à un double-clic dans le répertoire suivant : *./html/index.html*  <br>
 
