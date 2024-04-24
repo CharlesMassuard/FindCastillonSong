@@ -32,4 +32,4 @@ Plusieurs modes de jeux sont proposés :  <br><br>
 En raison des droits d'auteurs sur les musiques, l'hébergement n'est pas possible.
 
 Afin d'utiliser le site, vous pouvez le télécharger via la *release* sur GitHub, en téléchargeant le code source.
-
+Ensuite, lancer le fichier *index.html* directement sur votre navigateur.
