@@ -30,6 +30,7 @@ function jouerMusique() {
         musiqueEnCours.pause();
         return;
     }
+    valider = false;
     let nbrAleatoire;
     do{
         nbrAleatoire = Math.floor(Math.random() * ListMusiques.length);
