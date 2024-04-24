@@ -31,8 +31,5 @@ Plusieurs modes de jeux sont proposés :  <br><br>
 
 En raison des droits d'auteurs sur les musiques, l'hébergement n'est pas possible.
 
-Afin d'utiliser le site, une utilisation en locale doit être faite. <br><br>
-    - **Fork** le répertoire GitHub <br>
-    - **Cloner** le nouveau répertoire obtenu grâce au *Fork* <br>
-    - **Lancer** le site grâce à un double-clic dans le répertoire suivant : *./html/index.html*  <br>
+Afin d'utiliser le site, vous pouvez le télécharger via la *release* sur GitHub, en téléchargeant le code source.
 
