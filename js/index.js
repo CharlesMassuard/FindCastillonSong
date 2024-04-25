@@ -12,17 +12,17 @@ buttonPlay.addEventListener('click', () => {
 });
 
 normalMode.addEventListener('click', () => {
-    window.location.href = "./normalGame.html";
+    window.location.href = "./html/normalGame.html";
 });
 
 contreLaMontreMode.addEventListener('click', () => {
-    window.location.href = "./contreLaMontre.html";
+    window.location.href = "./html/contreLaMontre.html";
 });
 
 aleatoireMode.addEventListener('click', () => {
-    window.location.href = "./aleatoire.html";
+    window.location.href = "./html/aleatoire.html";
 });
 
 extremeMode.addEventListener('click', () => {
-    window.location.href = "./extremeMode.html";
+    window.location.href = "./html/extremeMode.html";
 });
