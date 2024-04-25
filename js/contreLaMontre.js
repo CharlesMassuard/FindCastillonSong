@@ -40,7 +40,7 @@ function jouerMusique() {
     nbrMusiquesEcoutees++;
     tpsEcoule = 0;
     temps.innerHTML = "8s";
-    musiqueEnCours = new Audio(`./musiques/${ListMusiques[nbrAleatoire]}.mp3`);
+    musiqueEnCours = new Audio(`../musiques/${ListMusiques[nbrAleatoire]}.mp3`);
     musiqueEnCours.volume = 0.1;
     musiqueEnCours.play();
     timer = setInterval(() => {

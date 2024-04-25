@@ -36,7 +36,7 @@ function jouerMusique() {
     indexMusiqueEnCours = nbrAleatoire;
     musiqueEnCours.pause();
     nbrMusiquesEcoutees++;
-    musiqueEnCours = new Audio(`./musiques/${ListMusiques[nbrAleatoire]}.mp3`);
+    musiqueEnCours = new Audio(`../musiques/${ListMusiques[nbrAleatoire]}.mp3`);
     musiqueEnCours.volume = 0.1;
     musiqueEnCours.addEventListener('loadedmetadata', function() {
         tempsMusique = musiqueEnCours.duration;
