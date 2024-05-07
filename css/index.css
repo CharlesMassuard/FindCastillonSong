@@ -61,7 +61,8 @@ article:hover {
 p{
     margin-top: -1em;
     font-size: 0.9em;
-    overflow-wrap: break-word;
+    word-wrap: anywhere; 
+    white-space: pre-wrap;
     
 }
 
