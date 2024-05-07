@@ -1,7 +1,4 @@
 body{
-    background-image: url("../img/adele_castillon_prd.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,122 +6,177 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
-#accueil{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+figure {
+    width: 500px;
+    aspect-ratio: 8 / 5;
+    --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+    --accent: hsl(280 80% 40%);
+    transition: background 0.2s;
+    background:
+        radial-gradient(circle at top left, var(--accent), transparent 75%),
+        var(--bg);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+    
+figure:after {
+    content: "";
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    bottom: 0%;
+    left: 10%;
+    background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+    filter: blur(25px);
+    transform:
+        translateX(calc(var(--hover) * 15%))
+        scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s, background 0.2s;
 }
 
-h1{
-    font-size: 9em;
-    text-align: center;
+img {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 60%;
+    transform:
+        translateX(calc(var(--hover) * -15%))
+        scale(calc(1 + (var(--hover) * 0.2)));
+    transition: transform 0.2s;
 }
 
-.black{
-    color: black;
+article {
+    --hover: 0;
 }
 
-button{
-    border-radius: 1em;
-    background: rgba(255, 255, 255, 0.1);
-    border: 0.1em solid rgba(255, 255, 255, 0.4);
-    color: #fff;
-    font-size: 2em;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    transition: background 0.5s, border 0.5s;
-}
-
-button:hover{
-    background: rgba(0, 0, 0, 0.4);
-    border: 0.1em solid rgba(255, 255, 255, 0.1);
-}
-
-/* CARTES */
- 
-#selectGame{
-    display: flex;
-    flex-direction: inline;
-    align-items: center;
-    justify-content: center;
-    height: 105vh;
-    color: black;
-}
-
-article:hover{
-    cursor: pointer;
-}
-
- 
-#selectFinalGame{
-    display: flex;
-    flex-direction: inline;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    margin-top: -20em;
-}
-
-article{
-    margin: 20px;
+article:hover {
+    --hover: 1;
 }
 
 p{
     margin-top: -1em;
     font-size: 0.9em;
+    word-wrap: break-word;
 }
 
-figure {
-width: 500px;
-aspect-ratio: 8 / 5;
---bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
---accent: hsl(280 80% 40%);
-transition: background 0.2s;
-background:
-    radial-gradient(circle at top left, var(--accent), transparent 75%),
-    var(--bg);
-margin: 0;
-position: relative;
-overflow: hidden;
-border-radius: 1.5rem;
+h2{
+    font-size: 1.5em;
 }
 
-figure:after {
-content: "";
-position: absolute;
-width: 20%;
-aspect-ratio: 1;
-border-radius: 50%;
-bottom: 0%;
-left: 10%;
-background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
-filter: blur(25px);
-transform:
-    translateX(calc(var(--hover) * 15%))
-    scale(calc(1 + (var(--hover) * 0.2)));
-transition: transform 0.2s, background 0.2s;
+@media (min-width: 576px) and (max-width: 1199px){
+
+    body{
+        background-image: none;
+        background-color: white;
+        color: black;
+        align-items: center;
+    }
+
+    #accueil{
+        width: 100vw;
+        background-color: black;
+        margin-bottom: 3vh;
+    }
+
+    h1{
+        font-size: 5em;
+        text-align: center;
+        color: white;
+    }
+
+    #jouer{
+        display: none;
+    }
+
+    figure{
+        width: 90vw;
+    }
+
+    article{
+        margin-bottom: 5vh;
+    }
 }
 
-img {
-position: absolute;
-left: 20%;
-top: 15%;
-width: 60%;
-transform:
-    translateX(calc(var(--hover) * -15%))
-    scale(calc(1 + (var(--hover) * 0.2)));
-transition: transform 0.2s;
-}
 
-article {
---hover: 0;
-}
+@media (min-width: 1200px){
 
-article:hover {
---hover: 1;
+    body{
+        background-image: url("../img/adele_castillon_prd.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: white;
+    }
+    
+    #accueil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    #jouer{
+        display: block;
+    }
+    
+    h1{
+        font-size: 9em;
+        text-align: center;
+    }
+    
+    .black{
+        color: black;
+    }
+    
+    button{
+        border-radius: 1em;
+        background: rgba(255, 255, 255, 0.1);
+        border: 0.1em solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        font-size: 2em;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        transition: background 0.5s, border 0.5s;
+    }
+    
+    button:hover{
+        background: rgba(0, 0, 0, 0.4);
+        border: 0.1em solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* CARTES */
+     
+    #selectGame{
+        display: flex;
+        flex-direction: inline;
+        align-items: center;
+        justify-content: center;
+        height: 105vh;
+        color: black;
+    }
+    
+    article:hover{
+        cursor: pointer;
+    }
+    
+     
+    #selectFinalGame{
+        display: flex;
+        flex-direction: inline;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        margin-top: -20em;
+    }
+    
+    article{
+        margin: 20px;
+        width: 26vw;
+    }
+    
 }
