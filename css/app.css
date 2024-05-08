@@ -148,4 +148,8 @@ button:hover{
         scale: 0.5;
     }
 
+    #valider{
+        margin-top: 0.5em;
+    }
+
 }

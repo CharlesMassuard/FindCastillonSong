@@ -63,10 +63,12 @@ validateButton.addEventListener('click', () => {
         if (reponseValue.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === ListMusiques[indexMusiqueEnCours].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
             reponse.style.color = "darkgreen";
             body.style.backgroundColor = "green";
+            document.getElementById('accueil').style.backgroundColor = "green";
             valeurScore++;
         } else {
             reponse.style.color = "darkred";
             body.style.backgroundColor = "red";
+            document.getElementById('accueil').style.backgroundColor = "red";
         }
         titreReponse.innerHTML = ListMusiques[indexMusiqueEnCours];
         score.innerHTML = "Score : "+valeurScore+"/"+nbrMusiquesEcoutees;
@@ -81,6 +83,7 @@ validateButton.addEventListener('click', () => {
             reponse.style.transition = "background 0.5s, border 0.5s";
             reponse.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
             body.style.backgroundColor = "black";
+            document.getElementById('accueil').style.backgroundColor = "black";
             jouerMusique();
         }, 2000);
     }
