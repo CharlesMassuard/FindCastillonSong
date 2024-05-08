@@ -105,6 +105,7 @@ buttonPause.addEventListener('click', () => {
         musiqueEnCours.play();
         buttonPause.innerHTML = "Pause";
         pause = false;
+        reponse.focus();
         if(enAttente){
             titreReponse.innerHTML = "";
             enAttente = false;
