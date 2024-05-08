@@ -49,6 +49,7 @@ reponse.addEventListener('keyup', (e) => {
 
 validateButton.addEventListener('click', () => {
     if(validateButton.innerHTML === "Lancer la partie"){
+        document.getElementById('avantLancement').style.display = "none";
         jouerMusique();
         validateButton.innerHTML = "Valider";
         buttonPause.style.display = "block";

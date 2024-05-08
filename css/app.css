@@ -5,9 +5,9 @@ body{
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .material-icons {
@@ -75,14 +75,14 @@ button:hover{
 }
 
 #timer {
-    position: relative; /* Add this */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #temps {
-    position: absolute; /* Add this */
+    position: absolute;
     font-size: 2em;
     margin-top: 1em;
     font-weight: bold;
@@ -97,4 +97,53 @@ button:hover{
     transform: translateX(-50%);
     font-size: 3em;
     font-weight: bold;
+}
+
+#accueil{
+    display: none;
+}
+
+@media (min-width: 576px) and (max-width: 1199px){
+
+    #accueil{
+        display: block;
+        width: 100vw;
+        background-color: black;
+        margin-bottom: 3vh;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+
+    header{
+        display: none;
+    }
+
+    h1{
+        font-size: 5em;
+        text-align: center;
+    }
+
+    body{
+        margin-top: 20vh;
+    }
+
+    #avantLancement{
+        display: block;
+        font-size: 250%;
+        text-align: center;
+    }
+
+    #avantLancement > *{
+        margin-bottom: -5vh;
+    }
+
+    #valider{
+        font-size: 350%;
+    }
+
+    #airpods{
+        transform: rotate(5deg);
+        scale: 0.5;
+    }
 }
