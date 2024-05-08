@@ -39,6 +39,11 @@ function jouerMusique() {
     musiqueEnCours = new Audio(`../musiques/${ListMusiques[nbrAleatoire]}.mp3`);
     musiqueEnCours.volume = 0.1;
     musiqueEnCours.play();
+    var iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if(iOS){
+        buttonPause.click();
+        buttonPause.click();
+    }
 }
 
 reponse.addEventListener('keyup', (e) => {
@@ -56,11 +61,6 @@ validateButton.addEventListener('click', () => {
         reponse.hidden = false;
         reponse.focus();
     } else {
-        var iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
-        if(iOS){
-            alert("Désolé, cette fonctionnalité n'est pas disponible sur iOS");
-            return;
-        }
         valider = true;
         reponse.style.transition = "background 0s, border 0s";
         reponse.style.backgroundColor = "#1a1a1a";
