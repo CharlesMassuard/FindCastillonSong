@@ -16,6 +16,7 @@ let valeurScore = 0;
 let pause = false;
 let enAttente = false;
 let valider = false;
+let iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 function jouerMusique() {
     if(nbrMusiquesEcoutees === ListMusiques.length){
@@ -39,12 +40,8 @@ function jouerMusique() {
     musiqueEnCours = new Audio(`../musiques/${ListMusiques[nbrAleatoire]}.mp3`);
     musiqueEnCours.volume = 0.1;
     musiqueEnCours.play();
-    var iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
     if(iOS){
         buttonPause.click();
-        setTimeout(() => {
-            buttonPause.click();
-        }, 1000);
     }
 }
 
@@ -57,6 +54,9 @@ reponse.addEventListener('keyup', (e) => {
 validateButton.addEventListener('click', () => {
     if(validateButton.innerHTML === "Lancer la partie"){
         document.getElementById('avantLancement').style.display = "none";
+        if(iOS){
+            alert("Suite à une limitation sur les appareils IOS, vous devrez cliquer sur le bouton 'Play' à chaque nouvelle musique. Nous sommes désolés pour ce désagrément hors de notre contrôle, et vous remercions de votre compréhension.");
+        }
         jouerMusique();
         validateButton.innerHTML = "Valider";
         buttonPause.style.display = "block";
