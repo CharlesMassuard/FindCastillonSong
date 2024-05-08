@@ -102,7 +102,8 @@ article:hover {
     
     p{
         margin-top: -1em;
-        font-size: 22px;
+        font-size: 1em;
+        text-size-adjust: auto;
         word-wrap: anywhere; 
         white-space: pre-wrap;
     }
