@@ -114,6 +114,7 @@ buttonPause.addEventListener('click', () => {
             reponse.style.transition = "background 0.5s, border 0.5s";
             reponse.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
             body.style.backgroundColor = "black";
+            document.getElementById('accueil').style.backgroundColor = "black";
             jouerMusique();
         }
     }
