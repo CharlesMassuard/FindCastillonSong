@@ -42,7 +42,6 @@ function jouerMusique() {
     var iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
     if(iOS){
         buttonPause.click();
-        buttonPause.click();
     }
 }
 
