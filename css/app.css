@@ -139,7 +139,7 @@ button:hover{
         margin-bottom: -5vh;
     }
 
-    #valider{
+    #valider, #reponse, #pause, #score{
         font-size: 350%;
     }
 
@@ -147,4 +147,5 @@ button:hover{
         transform: rotate(5deg);
         scale: 0.5;
     }
+
 }
