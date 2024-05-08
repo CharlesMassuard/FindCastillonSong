@@ -82,6 +82,9 @@ h2{
         width: 100vw;
         background-color: black;
         margin-bottom: 3vh;
+        position: fixed;
+        top: 0;
+        z-index: 1;
     }
 
     h1{
@@ -101,6 +104,10 @@ h2{
     article{
         margin-bottom: 5vh;
         text-align: center;
+    }
+
+    #selectGame{
+        margin-top: 25%;
     }
 }
 
