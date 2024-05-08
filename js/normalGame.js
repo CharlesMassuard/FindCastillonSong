@@ -56,6 +56,11 @@ validateButton.addEventListener('click', () => {
         reponse.hidden = false;
         reponse.focus();
     } else {
+        var iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
+        if(iOS){
+            alert("Désolé, cette fonctionnalité n'est pas disponible sur iOS");
+            return;
+        }
         valider = true;
         reponse.style.transition = "background 0s, border 0s";
         reponse.style.backgroundColor = "#1a1a1a";
