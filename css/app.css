@@ -153,3 +153,35 @@ button:hover{
     }
 
 }
+
+@media (min-width: 1200px){
+
+
+    #avantLancement{
+        display: block;
+        font-size: 150%;
+        text-align: center;
+        margin-top: -15vh;
+    }
+
+    #ecouteurs{
+        margin-top: -10vh;
+    }
+
+    #airpods{
+        transform: rotate(5deg);
+        scale: 0.3;
+    }
+
+    #valider, #reponse, #pause, #score{
+        font-size: 200%;
+    }
+
+    #titreReponse{
+        font-size: 300%;
+    }
+
+    body{
+        margin-top: 25vh;
+    }
+}
