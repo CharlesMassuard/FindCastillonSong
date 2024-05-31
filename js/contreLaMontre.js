@@ -8,7 +8,7 @@ let temps = document.getElementById('temps');
 
 let buttonPause = document.getElementById('pause');
 
-let ListMusiques = ["Amour Plastique", "C'est Drôle", "Alabama", "808", "Doliprane", "En nuit", "Enfance 80", "Euphories", "Gabrielle", "Impala", "Je t'aime", "Mai", "Novembre", "Partir", "Petit monde", "Petite Fille", "Polaroids", "PRD", "Promis", "Rêve", "Roi", "Sensations", "SMS", "Souvenirs", "Suricate", "Trois jours", "What Are You So Afraid Of"];
+let ListMusiques = ["Amour Plastique", "C'est Drôle", "Alabama", "808", "Doliprane", "En nuit", "Enfance 80", "Euphories", "Gabrielle", "Impala", "Je t'aime", "Mai", "Novembre", "Partir", "Petit monde", "Petite Fille", "Polaroids", "PRD", "Promis", "Rêve", "Roi", "Sensations", "SMS", "Souvenirs", "Suricate", "Trois jours", "What Are You So Afraid Of", "Ce soir"];
 
 let nbrMusiquesEcoutees = 0;
 let indexMusiqueEnCours = -1;
