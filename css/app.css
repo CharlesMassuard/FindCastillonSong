@@ -155,8 +155,7 @@ button:hover{
 }
 
 @media (min-width: 1200px){
-
-
+    
     #avantLancement{
         display: block;
         font-size: 150%;
