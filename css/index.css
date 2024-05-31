@@ -58,18 +58,6 @@ article:hover {
     --hover: 1;
 }
 
-p{
-    margin-top: -1em;
-    font-size: 0.9em;
-    word-wrap: anywhere; 
-    white-space: pre-wrap;
-    
-}
-
-h2{
-    font-size: 1.5em;
-}
-
 @media (min-width: 576px) and (max-width: 1199px){
 
     body{
@@ -83,6 +71,9 @@ h2{
         width: 100vw;
         background-color: black;
         margin-bottom: 3vh;
+        position: fixed;
+        top: 0;
+        z-index: 1;
     }
 
     h1{
@@ -101,6 +92,23 @@ h2{
 
     article{
         margin-bottom: 5vh;
+        text-align: center;
+    }
+
+    #selectGame{
+        margin-top: 25%;
+    }
+
+    
+    p{
+        margin-top: -1em;
+        font-size: 20px;
+        word-wrap: anywhere; 
+        white-space: pre-wrap;
+    }
+
+    h2{
+        font-size: 3em;
     }
 }
 
@@ -112,8 +120,18 @@ h2{
         background-size: 100%;
         background-repeat: no-repeat;
         color: white;
+    } 
+
+    p{
+        margin-top: -1em;
+        font-size: 0.9em;
+        word-wrap: break-word;
     }
     
+    h2{
+        font-size: 1.5em;
+    }
+
     #accueil{
         display: flex;
         flex-direction: column;

@@ -18,6 +18,7 @@ let pause = false;
 let enAttente = false;
 let tpsEcoule = 0;
 let valider = false;
+let iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 function jouerMusique() {
     if(nbrMusiquesEcoutees === ListMusiques.length){
@@ -43,6 +44,9 @@ function jouerMusique() {
     musiqueEnCours = new Audio(`../musiques/${ListMusiques[nbrAleatoire]}.mp3`);
     musiqueEnCours.volume = 0.1;
     musiqueEnCours.play();
+    if(iOS){
+        buttonPause.click();
+    }
     timer = setInterval(() => {
         if(pause){
             return;
@@ -69,6 +73,10 @@ reponse.addEventListener('keyup', (e) => {
 
 validateButton.addEventListener('click', () => {
     if(validateButton.innerHTML === "Lancer la partie"){
+        document.getElementById('avantLancement').style.display = "none";
+        if(iOS){
+            alert("Suite à une limitation sur les appareils IOS, vous devrez cliquer sur le bouton 'Play' à chaque nouvelle musique. Nous sommes désolés pour ce désagrément hors de notre contrôle, et vous remercions de votre compréhension.");
+        }
         jouerMusique();
         validateButton.innerHTML = "Valider";
         buttonPause.style.display = "block";
@@ -83,10 +91,12 @@ validateButton.addEventListener('click', () => {
         if (reponseValue.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === ListMusiques[indexMusiqueEnCours].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
             reponse.style.color = "darkgreen";
             body.style.backgroundColor = "green";
+            document.getElementById('accueil').style.backgroundColor = "green";
             valeurScore++;
         } else {
             reponse.style.color = "darkred";
             body.style.backgroundColor = "red";
+            document.getElementById('accueil').style.backgroundColor = "red";
         }
         clearInterval(timer);
         titreReponse.innerHTML = ListMusiques[indexMusiqueEnCours];
@@ -102,6 +112,7 @@ validateButton.addEventListener('click', () => {
             reponse.style.transition = "background 0.5s, border 0.5s";
             reponse.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
             body.style.backgroundColor = "black";
+            document.getElementById('accueil').style.backgroundColor = "black";
             jouerMusique();
         }, 2000);
     }
@@ -125,6 +136,7 @@ buttonPause.addEventListener('click', () => {
             reponse.style.transition = "background 0.5s, border 0.5s";
             reponse.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
             body.style.backgroundColor = "black";
+            document.getElementById('accueil').style.backgroundColor = "black";
             jouerMusique();
         }
     }
