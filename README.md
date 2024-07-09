@@ -29,4 +29,5 @@ Plusieurs modes de jeux sont proposés :  <br><br>
 
 ## IV. Utilisation du site
 
-Le site est disponible ici : https://findcastillonsong.netlify.app
+En raison des droits d'auteurs, l'hébergement est **impossible**
+Afin d'utiliser le site, vous pouvez *clôner* le dépôt GitHub ou télécharger le dépôt.
