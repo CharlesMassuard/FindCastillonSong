@@ -30,4 +30,4 @@ Plusieurs modes de jeux sont proposés :  <br><br>
 ## IV. Utilisation du site
 
 En raison des droits d'auteurs, l'hébergement est **impossible**.<br>
-Afin d'utiliser le site, vous pouvez *clôner* le dépôt GitHub ou le télécharger, directement depuis la section **Packages**.
+Afin d'utiliser le site, vous pouvez *clôner* le dépôt GitHub ou le télécharger, directement depuis la section **Releases**.
