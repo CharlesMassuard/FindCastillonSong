@@ -15,9 +15,11 @@ Le nom de la musique s'affiche sur l'écran.
 Une nouvelle musique est lancée 2 secondes après la fin de la manche.
 Il y a 27 manches.
 
-> *Tips : vous pouvez appuyer sur la touche "Entrée" pour valider votre réponse*
+> [!TIP]
+> Vous pouvez appuyer sur la touche "Entrée" pour valider votre réponse
 
-> *Tîps : les majuscules et accents ne sont pas contraignants (pour vérifier la réponse, tous les accents et majuscules du nom du morceau ainsi que de votre réponse sont retirés)*
+> [!TIP]
+> Les majuscules et accents ne sont pas contraignants (pour vérifier la réponse, tous les accents et majuscules du nom du morceau ainsi que de votre réponse sont retirés
 
 ## III. Modes de jeu
 
