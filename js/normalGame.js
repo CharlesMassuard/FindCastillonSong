@@ -7,7 +7,7 @@ let titreReponse = document.getElementById('titreReponse');
 
 let buttonPause = document.getElementById('pause');
 
-let ListMusiques = ["Amour Plastique", "C'est Drôle", "Alabama", "808", "Doliprane", "En nuit", "Enfance 80", "Euphories", "Gabrielle", "Impala", "Je t'aime", "Mai", "Novembre", "Partir", "Petit monde", "Petite Fille", "Polaroids", "PRD", "Promis", "Rêve", "Roi", "Sensations", "SMS", "Souvenirs", "Suricate", "Trois jours", "What Are You So Afraid Of", "Ce soir"];
+let ListMusiques = ["Amour Plastique", "C'est Drôle", "Alabama", "808", "Doliprane", "En nuit", "Enfance 80", "Euphories", "Gabrielle", "Impala", "Je t'aime", "Mai", "Novembre", "Partir", "Petit monde", "Petite Fille", "Polaroids", "PRD", "Promis", "Rêve", "Roi", "Sensations", "SMS", "Souvenirs", "Suricate", "Trois jours", "What Are You So Afraid Of", "Ce soir", "À la folie", "Crève-cœur", "Frissons", "lèche_vitrine_demo1.wav", "Subutex"];
 
 let nbrMusiquesEcoutees = 0;
 let indexMusiqueEnCours = -1;
@@ -17,9 +17,10 @@ let pause = false;
 let enAttente = false;
 let valider = false;
 let iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
+let listMusiquesJouees = [];
 
 function jouerMusique() {
-    if(nbrMusiquesEcoutees === ListMusiques.length){
+    if(nbrMusiquesEcoutees === 20){
         alert("Partie terminée ! \nScore : "+valeurScore+"/"+nbrMusiquesEcoutees);
         nbrMusiquesEcoutees = 0;
         valeurScore = 0;
@@ -33,7 +34,8 @@ function jouerMusique() {
     let nbrAleatoire;
     do{
         nbrAleatoire = Math.floor(Math.random() * ListMusiques.length);
-    } while (nbrAleatoire === indexMusiqueEnCours);
+    } while (listMusiquesJouees.includes(ListMusiques[nbrAleatoire]));
+    listMusiquesJouees.push(ListMusiques[nbrAleatoire]);
     indexMusiqueEnCours = nbrAleatoire;
     musiqueEnCours.pause();
     nbrMusiquesEcoutees++;
@@ -67,7 +69,7 @@ validateButton.addEventListener('click', () => {
         reponse.style.transition = "background 0s, border 0s";
         reponse.style.backgroundColor = "#1a1a1a";
         reponseValue = document.getElementById('reponse').value;
-        if (reponseValue.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === ListMusiques[indexMusiqueEnCours].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+        if (isValidResponse(reponseValue)) {
             reponse.style.color = "darkgreen";
             body.style.backgroundColor = "green";
             document.getElementById('accueil').style.backgroundColor = "green";
@@ -119,3 +121,28 @@ buttonPause.addEventListener('click', () => {
         }
     }
 });
+
+function isValidResponse(reponseValue) {
+    const normalizedResponse = reponseValue.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
+    const normalizedMusic = ListMusiques[indexMusiqueEnCours].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
+
+    if (normalizedResponse === normalizedMusic) {
+        return true;
+    }
+
+    // Specific checks for "lèche_vitrine_demo1.wav" and its variations
+    if (normalizedMusic === "leche_vitrine_demo1.wav") {
+        const validResponses = ["leche_vitrine", "leche_vitrine_demo", "leche_vitrine_demo1", "leche vitrine", "leche vitrine demo", "leche vitrine demo1"];
+        if (validResponses.includes(normalizedResponse)) {
+            return true;
+        }
+    }
+    if(normalizedMusic === "creve-coeur"){
+        const validResponses = ["creve-coeur", "creve coeur"];
+        if (validResponses.includes(normalizedResponse)) {
+            return true;
+        }
+    }
+
+    return false;
+}
