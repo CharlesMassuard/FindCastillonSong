@@ -22,7 +22,7 @@ let iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
 let listMusiquesJouees = [];
 
 function jouerMusique() {
-    if(nbrMusiquesEcoutees === ListMusiques.length){
+    if(nbrMusiquesEcoutees === 20){
         alert("Partie terminée ! \nScore : "+valeurScore+"/"+nbrMusiquesEcoutees);
         nbrMusiquesEcoutees = 0;
         valeurScore = 0;
