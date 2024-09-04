@@ -19,6 +19,7 @@ let enAttente = false;
 let tpsEcoule = 0;
 let valider = false;
 let iOS = !window.MSStream && /iPad|iPhone|iPod/.test(navigator.userAgent);
+let listMusiquesJouees = [];
 
 function jouerMusique() {
     if(nbrMusiquesEcoutees === ListMusiques.length){
