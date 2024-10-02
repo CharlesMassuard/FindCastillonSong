@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synchronisation des Paroles</title>
-    <style>
-        .lyrics-container {
-            font-size: 24px;
-            text-align: center;
-            margin-top: 20px;
-            color: #333;
-        }
-    </style>
+    <title>N'oubliez pas les paroles</title>
+    <link rel="stylesheet" href="../css/paroles.css">
+    <script src="../js/paroles.js" type="module"></script>
 </head>
 <body>
+    <h1>N'oubliez pas les paroles</h1>
+    <button id="startButton">Start</button>
     <audio id="audioPlayer" controls>
         <source src="../musiques/Alabama.mp3" type="audio/mpeg">
     </audio>
     <div id="lyricsDisplay" class="lyrics-container"></div>
-
-    <script src="../js/paroles.js"></script> <!-- Assurez-vous que le chemin du script est correct -->
 </body>
 </html>
