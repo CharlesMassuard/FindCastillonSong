@@ -25,9 +25,6 @@ function parseLRC(lrcText) {
     return lyrics;
 }
 
-let parolesTrouvees = false;
-let changerCouleurParoles = false;
-
 // Fonction pour afficher les paroles synchronisées
 function syncLyrics(lyrics, audio) {
     const lyricsDisplay = document.getElementById('lyricsDisplay');
@@ -39,7 +36,7 @@ function syncLyrics(lyrics, audio) {
         });
         
         if (currentLyric && currentLyric.text != prec_lyrics) {
-            if (!parolesTrouvees && currentTime >= timestamp_demande_paroles) {
+            if (currentTime >= timestamp_demande_paroles) {
                 audio.pause();
                 //remplacer lettres par _
                 let text = currentLyric.text;
@@ -64,13 +61,6 @@ function syncLyrics(lyrics, audio) {
                 paroles_a_trouver = currentLyric.text;
             }
             else{
-                if(changerCouleurParoles && parolesTrouvees){
-                    lyricsDisplay.style.color = "Green";
-                    changerCouleurParoles = false;
-                }
-                else{
-                    lyricsDisplay.style.color = "White";
-                }
                 lyricsDisplay.style.fontSize = "2.5em";
                 lyricsDisplay.textContent = currentLyric.text;
                 prec_lyrics = currentLyric.text;
@@ -113,14 +103,21 @@ let reponse = document.getElementById('reponse');
 reponse.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         const normalizedResponse = reponse.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
-        const normalizedParoles = paroles_a_trouver.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
+        const normalizedParoles = paroles_a_trouver.toLowerCase()
+                                                                    .normalize("NFD")
+                                                                    .replace(/[\u0300-\u036f]/g, "")
+                                                                    .replace(/œ/g, "oe")
+                                                                    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+                                                                    .replace(/\s+/g, " "); //espaces multiples par un seul
         console.log(normalizedResponse);
         console.log(normalizedParoles);
+        document.getElementById('boutons').hidden = false;
         if(normalizedResponse === normalizedParoles){
+            document.getElementById('recommencer').hidden = true;
             document.getElementById('reponse').hidden = true;
-            parolesTrouvees = true;
-            changerCouleurParoles = true;
-            audio.play();
+            lyricsDisplay.style.fontSize = "2.5em";
+            lyricsDisplay.style.color = "Green";
+            lyricsDisplay.innerHTML = paroles_a_trouver;
         }
         else{
             let liste_mots_a_trouver = normalizedParoles.split(" ");
@@ -141,4 +138,17 @@ reponse.addEventListener('keydown', function(event) {
         }
     }
 });
+
+//boutons
+
+let continuer = document.getElementById('continuer');
+continuer.addEventListener('click', function() {
+    document.getElementById('boutons').hidden = true;
+    document.getElementById('reponse').value = "";
+    const duree_musique = musique.duration - audio.currentTime;
+    timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
+    lyricsDisplay.style.color = "White";
+    audio.play();
+});
+
   
