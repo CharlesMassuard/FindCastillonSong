@@ -28,13 +28,11 @@ function parseLRC(lrcText) {
 // Fonction pour afficher les paroles synchronisées
 function syncLyrics(lyrics, audio) {
     const lyricsDisplay = document.getElementById('lyricsDisplay');
-
     audio.ontimeupdate = () => {
         const currentTime = audio.currentTime;
         const currentLyric = lyrics.find((lyric, index) => {
         return currentTime >= lyric.time && (index === lyrics.length - 1 || currentTime < lyrics[index + 1].time);
         });
-        
         if (currentLyric && currentLyric.text != prec_lyrics) {
             if (currentTime >= timestamp_demande_paroles) {
                 audio.pause();
@@ -148,6 +146,19 @@ continuer.addEventListener('click', function() {
     const duree_musique = musique.duration - audio.currentTime;
     timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
     lyricsDisplay.style.color = "White";
+    audio.play();
+});
+
+let recommencer = document.getElementById('recommencer');
+recommencer.addEventListener('click', function() {
+    document.getElementById('boutons').hidden = true;
+    document.getElementById('reponse').value = "";
+    const duree_musique = musique.duration;
+    timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
+    lyricsDisplay.style.color = "White";
+    lyricsDisplay.innerHTML = "";
+    prec_lyrics = "";
+    audio.currentTime = 0;
     audio.play();
 });
 
