@@ -25,6 +25,9 @@ function parseLRC(lrcText) {
     return lyrics;
 }
 
+let parolesTrouvees = false;
+let changerCouleurParoles = false;
+
 // Fonction pour afficher les paroles synchronisées
 function syncLyrics(lyrics, audio) {
     const lyricsDisplay = document.getElementById('lyricsDisplay');
@@ -36,11 +39,39 @@ function syncLyrics(lyrics, audio) {
         });
         
         if (currentLyric && currentLyric.text != prec_lyrics) {
-            if (currentTime >= timestamp_demande_paroles) {
+            if (!parolesTrouvees && currentTime >= timestamp_demande_paroles) {
                 audio.pause();
-                lyricsDisplay.textContent = "Trouvez les paroles !";
+                //remplacer lettres par _
+                let text = currentLyric.text;
+                let text_censure = "";
+                for (let i = 0; i < text.length; i++) {
+                    lyricsDisplay.style.fontSize = "2em";
+                    if (text[i] === " ") {
+                        text_censure += "&nbsp;&nbsp;";
+                    }
+                    else if (text[i] === "'") {
+                        text_censure += "'";
+                    }
+                    else if (text[i] === ",") {
+                        text_censure += ",";
+                    }
+                    else {
+                        text_censure += "_ ";
+                    }
+                }
+                lyricsDisplay.innerHTML = text_censure;
+                document.getElementById('reponse').hidden = false;
+                paroles_a_trouver = currentLyric.text;
             }
             else{
+                if(changerCouleurParoles && parolesTrouvees){
+                    lyricsDisplay.style.color = "Green";
+                    changerCouleurParoles = false;
+                }
+                else{
+                    lyricsDisplay.style.color = "White";
+                }
+                lyricsDisplay.style.fontSize = "2.5em";
                 lyricsDisplay.textContent = currentLyric.text;
                 prec_lyrics = currentLyric.text;
             }
@@ -54,16 +85,19 @@ import { ListMusiques } from './musiques.js';
 // const musique = ListMusiques[Math.floor(Math.random() * ListMusiques.length)];
 let musique = new Audio(`../musiques/Alabama.mp3`);
 let prec_lyrics = "";
+let paroles_a_trouver = "";
 
 let timestamp_demande_paroles = 0;
 
 musique.addEventListener('loadedmetadata', () => {
     const duree_musique = musique.duration;
     timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
+    timestamp_demande_paroles = 5;
 });
 
 let startButton = document.getElementById('startButton');
 startButton.addEventListener('click', function() {
+
     const audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.volume = 0.1;
     audioPlayer.play();
@@ -72,5 +106,39 @@ startButton.addEventListener('click', function() {
 const audio = document.getElementById('audioPlayer');
     loadLRC('../paroles/alabama.lrc').then(lyrics => {
     syncLyrics(lyrics, audio);
+});
+
+let reponse = document.getElementById('reponse');
+
+reponse.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const normalizedResponse = reponse.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
+        const normalizedParoles = paroles_a_trouver.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
+        console.log(normalizedResponse);
+        console.log(normalizedParoles);
+        if(normalizedResponse === normalizedParoles){
+            document.getElementById('reponse').hidden = true;
+            parolesTrouvees = true;
+            changerCouleurParoles = true;
+            audio.play();
+        }
+        else{
+            let liste_mots_a_trouver = normalizedParoles.split(" ");
+            let liste_mots_reponse = normalizedResponse.split(" ");
+            //ecrire en rouge les mots faux
+            let texte = "";
+            for (let i = 0; i < liste_mots_a_trouver.length; i++) {
+                if (liste_mots_reponse[i] === liste_mots_a_trouver[i]) {
+                    texte += "<span style='color:green'>" + liste_mots_a_trouver[i] + "</span>&nbsp;";
+                }
+                else {
+                    texte += "<span style='color:red'>" + liste_mots_a_trouver[i] + "</span>&nbsp;";
+                }
+            }
+            document.getElementById('reponse').hidden = true;
+            lyricsDisplay.style.fontSize = "2.5em";
+            lyricsDisplay.innerHTML = texte;
+        }
+    }
 });
   
