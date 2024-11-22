@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let fichier_paroles = musique['fichier_paroles'];
                 let fichier_audio = musique['fichier_audio'];
                 let fichier_image = musique['fichier_image'];
+                let fichier_clip = musique['fichier_clip'] ?? null;
                 console.log(`${titre} ${artiste} ${album} ${annee} ${fichier_paroles} ${fichier_audio} ${fichier_image}`);
                 
                 // Create article element
@@ -27,7 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Add click event listener to the article
                 article.addEventListener('click', () => {
-                    window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}`;
+                    // if(fichier_clip !== null) {
+                    //     window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}&fichier_clip=${fichier_clip}`;
+                    // } else {
+                        window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}`;
+                    // }
                 });
                 
                 // Append article to the div_menu
