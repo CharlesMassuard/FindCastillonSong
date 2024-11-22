@@ -69,9 +69,6 @@ function syncLyrics(lyrics, audio) {
 }
 
 // Initialisation
-import { ListMusiques } from './musiques.js';
-//musique get en paramètre de chemin
-
 // Function to get URL parameters
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -94,7 +91,6 @@ let timestamp_demande_paroles = 0;
 musique.addEventListener('loadedmetadata', () => {
     const duree_musique = musique.duration;
     timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
-    timestamp_demande_paroles = 5;
 });
 
 let startButton = document.getElementById('startButton');
@@ -106,7 +102,7 @@ startButton.addEventListener('click', function() {
     startButton.textContent = 'Pause (TODO)';
 });
 const audio = document.getElementById('audioPlayer');
-    loadLRC('../paroles/alabama.lrc').then(lyrics => {
+    loadLRC(`../paroles/${fichier_paroles}`).then(lyrics => {
     syncLyrics(lyrics, audio);
 });
 
@@ -158,7 +154,7 @@ continuer.addEventListener('click', function() {
     document.getElementById('boutons').hidden = true;
     document.getElementById('reponse').value = "";
     const duree_musique = musique.duration - audio.currentTime;
-    timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
+    timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 30) + 20);
     lyricsDisplay.style.color = "White";
     audio.play();
 });
