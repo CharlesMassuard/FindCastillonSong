@@ -1,0 +1,47 @@
+[
+    {
+        "titre": "Alabama",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "alabama.lrc",
+        "fichier_audio": "Alabama.mp3",
+        "fichier_image": "alabama.jpg"
+    },
+    {
+        "titre": "Impala",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "impala.lrc",
+        "fichier_audio": "Impala.mp3",
+        "fichier_image": "impala.jpg"
+    },
+    {
+        "titre": "Amour plastique",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2020",
+        "fichier_paroles": "amour_plastique.lrc",
+        "fichier_audio": "Amour_Plastique.mp3",
+        "fichier_image": "amour_plastique.jpg"
+    },
+    {
+        "titre": "En nuit",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2020",
+        "fichier_paroles": "en_nuit.lrc",
+        "fichier_audio": "En_Nuit.mp3",
+        "fichier_image": "en_nuit.jpg"
+    },
+    {
+        "titre": "SMS",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2020",
+        "fichier_paroles": "sms.lrc",
+        "fichier_audio": "SMS.mp3",
+        "fichier_image": "sms.jpg"
+    }
+]
