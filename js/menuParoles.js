@@ -15,13 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 let fichier_audio = musique['fichier_audio'];
                 let fichier_image = musique['fichier_image'];
                 console.log(`${titre} ${artiste} ${album} ${annee} ${fichier_paroles} ${fichier_audio} ${fichier_image}`);
-                div_menu.innerHTML += `
-                    <article id="musique">
-                        <figure><img src="../img/imgs_musiques/${fichier_image}" alt="Image de la musique"></figure>
-                        <h3>${titre}</h3>
-                        <p>${album} • ${artiste} • ${annee}</p>
-                    </article>
-                `;	
+                
+                // Create article element
+                let article = document.createElement('article');
+                article.id = 'musique';
+                article.innerHTML = `
+                    <figure><img src="../img/imgs_musiques/${fichier_image}" alt="Image de la musique"></figure>
+                    <h3>${titre}</h3>
+                    <p>${album} • ${artiste} • ${annee}</p>
+                `;
+                
+                // Add click event listener to the article
+                article.addEventListener('click', () => {
+                    window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}`;
+                });
+                
+                // Append article to the div_menu
+                div_menu.appendChild(article);
             });
         })
         .catch(error => console.error('Error fetching JSON:', error));

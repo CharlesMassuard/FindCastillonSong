@@ -70,8 +70,22 @@ function syncLyrics(lyrics, audio) {
 
 // Initialisation
 import { ListMusiques } from './musiques.js';
-// const musique = ListMusiques[Math.floor(Math.random() * ListMusiques.length)];
-let musique = new Audio(`../musiques/Alabama.mp3`);
+//musique get en paramètre de chemin
+
+// Function to get URL parameters
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    const results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// Retrieve parameters
+const fichier_paroles = getUrlParameter('fichier_paroles');
+const fichier_audio = getUrlParameter('fichier_audio');
+
+let musique = new Audio(`../musiques/${fichier_audio}`);
+document.getElementById('audioPlayer').src = `../musiques/${fichier_audio}`;
 let prec_lyrics = "";
 let paroles_a_trouver = "";
 
