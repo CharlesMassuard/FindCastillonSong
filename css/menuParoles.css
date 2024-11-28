@@ -14,46 +14,19 @@ p {
     color: black;
 }
 
-figure {
+.musique:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+img {
     width: 350px;
-    aspect-ratio: 8 / 5;
-    --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
-    --accent: hsl(280 80% 40%);
-    transition: background 0.2s;
-    background:
-        radial-gradient(circle at top left, var(--accent), transparent 75%),
-        var(--bg);
+    height: 197px;
     margin: 0;
     position: relative;
     overflow: hidden;
     border-radius: 1.5rem;
-}
-
-figure:after {
-    content: "";
-    position: absolute;
-    width: 20%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    bottom: 0%;
-    left: 10%;
-    background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
-    filter: blur(25px);
-    transform:
-        translateX(calc(var(--hover) * 15%))
-        scale(calc(1 + (var(--hover) * 0.2)));
-    transition: transform 0.2s, background 0.2s;
-}
-
-img {
-    position: absolute;
-    left: 20%;
-    top: 15%;
-    width: 60%;
-    transform:
-        translateX(calc(var(--hover) * -15%))
-        scale(calc(1 + (var(--hover) * 0.2)));
-    transition: transform 0.2s;
+    left: 0;
 }
 
 article {
@@ -75,6 +48,5 @@ article:hover {
     flex-wrap: wrap; /* Allow wrapping */
     align-items: center;
     justify-content: center;
-    height: 105vh;
     color: black;
 }

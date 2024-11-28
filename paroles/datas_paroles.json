@@ -1,5 +1,14 @@
 [
     {
+        "titre": "À la folie",
+        "artiste": "Adèle Castillon",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "a_la_folie.lrc",
+        "fichier_audio": "A_la_folie.mp3",
+        "fichier_image": "a_la_folie.jpg"
+    },
+    {
         "titre": "Alabama",
         "artiste": "Adèle Castillon",
         "album": "Plaisir Risque Dépendance",
@@ -9,15 +18,6 @@
         "fichier_image": "alabama.jpg"
     },
     {
-        "titre": "Impala",
-        "artiste": "Adèle Castillon",
-        "album": "Plaisir Risque Dépendance",
-        "année": "2023",
-        "fichier_paroles": "impala.lrc",
-        "fichier_audio": "Impala.mp3",
-        "fichier_image": "impala.jpg"
-    },
-    {
         "titre": "Amour plastique",
         "artiste": "Videoclub",
         "album": "Euphories",
@@ -25,6 +25,33 @@
         "fichier_paroles": "amour_plastique.lrc",
         "fichier_audio": "Amour_plastique.mp3",
         "fichier_image": "amour_plastique.jpg"
+    },
+    {
+        "titre": "C'est drôle",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "c_drole.lrc",
+        "fichier_audio": "C'est_drole.mp3",
+        "fichier_image": "c_drole.jpg"
+    },
+    {
+        "titre": "Ce soir",
+        "artiste": "Adèle Castillon (ft. Gazo)",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "ce_soir.lrc",
+        "fichier_audio": "Ce_soir.mp3",
+        "fichier_image": "ce_soir.jpg"
+    },
+    {
+        "titre": "Impala",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "impala.lrc",
+        "fichier_audio": "Impala.mp3",
+        "fichier_image": "impala.jpg"
     },
     {
         "titre": "En nuit",
@@ -42,6 +69,6 @@
         "année": "2020",
         "fichier_paroles": "sms.lrc",
         "fichier_audio": "SMS.mp3",
-        "fichier_image": "sms.jpg"
+        "fichier_image": "euphories.jpg"
     }
-]
+]   
