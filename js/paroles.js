@@ -80,11 +80,6 @@ function getUrlParameter(name) {
 // Retrieve parameters
 const fichier_paroles = getUrlParameter('fichier_paroles');
 const fichier_audio = getUrlParameter('fichier_audio');
-// const fichier_clip = getUrlParameter('fichier_clip');
-
-// if(fichier_clip !== '') {
-//     document.getElementById('sourceBackgroundClip').src = `../videos/clips/${fichier_clip}`;
-// }
 
 let musique = new Audio(`../musiques/${fichier_audio}`);
 document.getElementById('audioPlayer').src = `../musiques/${fichier_audio}`;

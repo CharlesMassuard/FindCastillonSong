@@ -28,11 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Add click event listener to the article
                 article.addEventListener('click', () => {
-                    // if(fichier_clip !== null) {
-                    //     window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}&fichier_clip=${fichier_clip}`;
-                    // } else {
-                        window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}`;
-                    // }
+                    window.location.href = `../html/paroles.html?fichier_paroles=${fichier_paroles}&fichier_audio=${fichier_audio}`;
                 });
                 
                 // Append article to the div_menu
