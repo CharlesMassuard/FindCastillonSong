@@ -34,7 +34,7 @@ function syncLyrics(lyrics, audio) {
         return currentTime >= lyric.time && (index === lyrics.length - 1 || currentTime < lyrics[index + 1].time);
         });
         if (currentLyric && currentLyric.text != prec_lyrics) {
-            if (currentTime >= timestamp_demande_paroles) {
+            if (currentTime >= timestamp_demande_paroles && timestamp_demande_paroles != -1) {
                 audio.pause();
                 //remplacer lettres par _
                 let text = currentLyric.text;
@@ -90,7 +90,7 @@ let timestamp_demande_paroles = 0;
 
 musique.addEventListener('loadedmetadata', () => {
     const duree_musique = musique.duration;
-    timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 60) + 20);
+    timestamp_demande_paroles = Math.floor(Math.random() * ((duree_musique/2) + 15));
 });
 
 let startButton = document.getElementById('startButton');
@@ -110,13 +110,19 @@ let reponse = document.getElementById('reponse');
 
 reponse.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        const normalizedResponse = reponse.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/œ/g, "oe");
+        const normalizedResponse = reponse.value.toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/œ/g, "oe")
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+            .replace(/\s+/g, " "); // Replace multiple spaces with a single space
+
         const normalizedParoles = paroles_a_trouver.toLowerCase()
-                                                                    .normalize("NFD")
-                                                                    .replace(/[\u0300-\u036f]/g, "")
-                                                                    .replace(/œ/g, "oe")
-                                                                    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-                                                                    .replace(/\s+/g, " "); //espaces multiples par un seul
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/œ/g, "oe")
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+            .replace(/\s+/g, " "); // Replace multiple spaces with a single space
         console.log(normalizedResponse);
         console.log(normalizedParoles);
         document.getElementById('boutons').hidden = false;
@@ -154,7 +160,14 @@ continuer.addEventListener('click', function() {
     document.getElementById('boutons').hidden = true;
     document.getElementById('reponse').value = "";
     const duree_musique = musique.duration - audio.currentTime;
-    timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - 30) + 20);
+    const minOffset = 20;
+    const maxOffset = 30;
+    if (duree_musique > minOffset + maxOffset) {
+        timestamp_demande_paroles = Math.floor(Math.random() * (duree_musique - maxOffset - minOffset) + minOffset);
+    } else {
+        timestamp_demande_paroles = -1;
+    }
+    console.log(timestamp_demande_paroles, audio.currentTime, duree_musique);
     lyricsDisplay.style.color = "White";
     audio.play();
 });
