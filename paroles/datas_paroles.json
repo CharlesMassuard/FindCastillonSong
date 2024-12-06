@@ -22,7 +22,7 @@
         "titre": "Amour plastique",
         "artiste": "Videoclub",
         "album": "Euphories",
-        "année": "2020",
+        "année": "2018",
         "fichier_paroles": "amour_plastique.lrc",
         "fichier_audio": "Amour_plastique.mp3",
         "fichier_image": "amour_plastique.jpg"
@@ -46,30 +46,264 @@
         "fichier_image": "ce_soir.jpg"
     },
     {
-        "titre": "Impala",
+        "titre": "Crève-cœur",
+        "artiste": "Adèle Castillon",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "creve_coeur.lrc",
+        "fichier_audio": "Creve_coeur.mp3",
+        "fichier_image": "creve_coeur.jpg"
+    },
+    {
+        "titre": "Doliprane",
         "artiste": "Adèle Castillon",
         "album": "Plaisir Risque Dépendance",
         "année": "2023",
-        "fichier_paroles": "impala.lrc",
-        "fichier_audio": "Impala.mp3",
-        "fichier_image": "impala.jpg"
+        "fichier_paroles": "doliprane.lrc",
+        "fichier_audio": "doliprane.mp3",
+        "fichier_image": "prd.jpg"
     },
     {
         "titre": "En nuit",
         "artiste": "Videoclub",
         "album": "Euphories",
-        "année": "2020",
+        "année": "2019",
         "fichier_paroles": "en_nuit.lrc",
         "fichier_audio": "En_Nuit.mp3",
         "fichier_image": "en_nuit.jpg"
     },
     {
-        "titre": "SMS",
+        "titre": "Enfance 80",
         "artiste": "Videoclub",
         "album": "Euphories",
         "année": "2020",
+        "fichier_paroles": "enfance_80.lrc",
+        "fichier_audio": "Enfance_80.mp3",
+        "fichier_image": "enfance_80.jpg"
+    },
+    {
+        "titre": "Euphories",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2020",
+        "fichier_paroles": "euphories.lrc",
+        "fichier_audio": "Euphories.mp3",
+        "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "Frissons",
+        "artiste": "Adèle Castillon (ft. Winnterzuko)",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "frissons.lrc",
+        "fichier_audio": "Frissons.mp3",
+        "fichier_image": "creve_coeur.jpg"
+    },
+    {
+        "titre": "Gabrielle",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "gabrielle.lrc",
+        "fichier_audio": "Gabrielle.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Impala",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2022",
+        "fichier_paroles": "impala.lrc",
+        "fichier_audio": "Impala.mp3",
+        "fichier_image": "impala.jpg"
+    },
+    {
+        "titre": "Je t'aime",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "je_taime.lrc",
+        "fichier_audio": "Je_t'aime.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "lèche_vitrine_demo1.wav",
+        "artiste": "Adèle Castillon",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "leche_vitrine.lrc",
+        "fichier_audio": "lèche_vitrine_demo1.wav.mp3",
+        "fichier_image": "creve_coeur.jpg"
+    },
+    {
+        "titre": "Mai",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2019",
+        "fichier_paroles": "mai.lrc",
+        "fichier_audio": "Mai.mp3",
+        "fichier_image": "mai.jpg"
+    },
+    {
+        "titre": "Novembre",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "novembre.lrc",
+        "fichier_audio": "Novembre.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Partir",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "partir.lrc",
+        "fichier_audio": "Partir.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Petit monde",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2021",
+        "fichier_paroles": "petit_monde.lrc",
+        "fichier_audio": "Petit_monde.mp3",
+        "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "Petite fille",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "petite_fille.lrc",
+        "fichier_audio": "Petite_fille.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Polaroids",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2021",
+        "fichier_paroles": "polaroids.lrc",
+        "fichier_audio": "Polaroids.mp3",
+        "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "PRD",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "prd.lrc",
+        "fichier_audio": "PRD.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Promis",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "promis.lrc",
+        "fichier_audio": "Promis.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Rêve",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "reve.lrc",
+        "fichier_audio": "Rêve.mp3",
+        "fichier_image": "reve.jpg"
+    },
+    {
+        "titre": "Roi",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2019",
         "fichier_paroles": "sms.lrc",
         "fichier_audio": "SMS.mp3",
         "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "Sensations",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "sensations.lrc",
+        "fichier_audio": "Sensations.mp3",
+        "fichier_image": "sensations.jpg"
+    },
+    {
+        "titre": "SMS",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2021",
+        "fichier_paroles": "sms.lrc",
+        "fichier_audio": "SMS.mp3",
+        "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "Souvenirs",
+        "artiste": "Adèle Castillon",
+        "album": "Plaisir Risque Dépendance",
+        "année": "2023",
+        "fichier_paroles": "souvenirs.lrc",
+        "fichier_audio": "Souvenirs.mp3",
+        "fichier_image": "prd.jpg"
+    },
+    {
+        "titre": "Subutex",
+        "artiste": "Adèle Castillon",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "subutex.lrc",
+        "fichier_audio": "Subutex.mp3",
+        "fichier_image": "creve_coeur.jpg"
+    },
+    {
+        "titre": "Suricate (ODZ)",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2021",
+        "fichier_paroles": "suricate.lrc",
+        "fichier_audio": "Suricate.mp3",
+        "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "Trois jours",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2021",
+        "fichier_paroles": "trois_jours.lrc",
+        "fichier_audio": "Trois_jours.mp3",
+        "fichier_image": "euphories.jpg"
+    },
+    {
+        "titre": "What Are You So Afraid Of",
+        "artiste": "Videoclub",
+        "album": "Euphories",
+        "année": "2019",
+        "fichier_paroles": "what_are_you.lrc",
+        "fichier_audio": "What_Are_You_So_Afraid_Of.mp3",
+        "fichier_image": "what_are_you.jpg"
+    },
+    {
+        "titre": "Je me demande",
+        "artiste": "Adèle Castillon (ft. Louane)",
+        "album": "Crève-cœur (EP I)",
+        "année": "2024",
+        "fichier_paroles": "je_me_demande.lrc",
+        "fichier_audio": "Je_me_demande.mp3",
+        "fichier_image": "creve_coeur.jpg"
+    },
+    {
+        "titre": "Somewhere only we know",
+        "artiste": "Adèle Castillon",
+        "album": "",
+        "année": "2024",
+        "fichier_paroles": "somewhere_only_we_know.lrc",
+        "fichier_audio": "Somewhere_only_we_know.mp3",
+        "fichier_image": "somewhere_only_we_know.jpg"
     }
 ]   

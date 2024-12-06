@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let article = document.createElement('article');
                 article.className = 'musique';
                 article.innerHTML = `
-                    <img src="../img/imgs_musiques/${fichier_image}" alt="Image de la musique">
+                    <img src="../img/imgs_musiques/${fichier_image}" onerror="this.src='../img/imgs_musiques/prd.jpg';" alt="Image de la musique">
                     <h3>${titre}</h3>
                     <p>${album} • ${artiste} • ${annee}</p>
                 `;
