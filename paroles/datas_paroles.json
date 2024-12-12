@@ -221,9 +221,9 @@
         "artiste": "Videoclub",
         "album": "Euphories",
         "année": "2019",
-        "fichier_paroles": "sms.lrc",
-        "fichier_audio": "SMS.mp3",
-        "fichier_image": "euphories.jpg"
+        "fichier_paroles": "roi.lrc",
+        "fichier_audio": "Roi.mp3",
+        "fichier_image": "roi.jpg"
     },
     {
         "titre": "Sensations",
@@ -286,7 +286,7 @@
         "année": "2019",
         "fichier_paroles": "what_are_you.lrc",
         "fichier_audio": "What_Are_You_So_Afraid_Of.mp3",
-        "fichier_image": "what_are_you.jpg"
+        "fichier_image": "what_are_you_so_afraid_of.jpg"
     },
     {
         "titre": "Je me demande",
@@ -295,7 +295,7 @@
         "année": "2024",
         "fichier_paroles": "je_me_demande.lrc",
         "fichier_audio": "Je_me_demande.mp3",
-        "fichier_image": "creve_coeur.jpg"
+        "fichier_image": "je_me_demande.jpg"
     },
     {
         "titre": "Somewhere only we know",
