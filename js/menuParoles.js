@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('../paroles/datas_paroles.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             data.forEach(musique => {
-                console.log(musique);
                 let titre = musique['titre'];
                 let artiste = musique['artiste'];
                 let album = musique['album'];
@@ -14,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let fichier_paroles = musique['fichier_paroles'];
                 let fichier_audio = musique['fichier_audio'];
                 let fichier_image = musique['fichier_image'];
-                let fichier_clip = musique['fichier_clip'] ?? null;
-                console.log(`${titre} ${artiste} ${album} ${annee} ${fichier_paroles} ${fichier_audio} ${fichier_image}`);
                 
                 // Create article element
                 let article = document.createElement('article');
