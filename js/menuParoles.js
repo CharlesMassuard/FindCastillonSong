@@ -1,3 +1,4 @@
+// filepath: /home/iut45/Etudiants/o22201673/Documents/FindCastillonSong/js/menuParoles.js
 document.addEventListener('DOMContentLoaded', () => {
     let div_menu = document.getElementById('selectGame');
     // Lire fichier JSON
@@ -16,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Create article element
                 let article = document.createElement('article');
                 article.className = 'musique';
+                article.setAttribute('data-titre', titre.toLowerCase());
+                article.setAttribute('data-artiste', artiste.toLowerCase());
+                article.setAttribute('data-album', album.toLowerCase());
                 article.innerHTML = `
                     <img src="../img/imgs_musiques/${fichier_image}" onerror="this.src='../img/imgs_musiques/prd.jpg';" alt="Image de la musique">
                     <h3>${titre}</h3>
